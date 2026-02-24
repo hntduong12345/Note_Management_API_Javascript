@@ -1,0 +1,82 @@
+# ==============================
+# Dependencies
+# ==============================
+node_modules/
+.pnp
+.pnp.js
+
+# ==============================
+# Logs
+# ==============================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==============================
+# Runtime data
+# ==============================
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ==============================
+# Coverage directory
+# ==============================
+coverage/
+
+# ==============================
+# Environment variables
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Build output (if using Babel/TypeScript)
+# ==============================
+dist/
+build/
+
+# ==============================
+# Cache
+# ==============================
+.cache/
+.eslintcache
+
+# ==============================
+# OS files
+# ==============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ==============================
+# Optional: Database files
+# ==============================
+*.sqlite
+*.sqlite3
+*.db
+
+# ==============================
+# Optional: Docker override files
+# ==============================
+docker-compose.override.yml
+
+# ==============================
+# Optional: PM2 logs
+# ==============================
+.pm2/
