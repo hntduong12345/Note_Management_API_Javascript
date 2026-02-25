@@ -7,6 +7,7 @@ const categoryHandlers = require("./categoryAPI");
 const attachmentHandlers = require("./attachmentAPI");
 const noteLinkHandlers = require("./noteLinkAPI");
 const noteRevisionHandlers = require("./noteRevisionAPI");
+const noteHandlers = require("./noteAPI");
 
 const routerAPI = express.Router();
 
@@ -24,5 +25,6 @@ routerAPI.use("/categories", categoryHandlers);
 routerAPI.use("/attachments", attachmentHandlers);
 routerAPI.use("/note-links", noteLinkHandlers);
 routerAPI.use("/note-revisions", noteRevisionHandlers);
+routerAPI.use("/notes", noteHandlers);
 
 module.exports = routerAPI;

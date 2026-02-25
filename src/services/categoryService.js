@@ -1,6 +1,6 @@
 require("dotenv").config();
 const AppError = require("../utils/AppError");
-const sequelize = require("../config/database");
+const sequelize = require("../models");
 
 const Category = require("../models/Category");
 const User = require("../models/User");

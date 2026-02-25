@@ -81,7 +81,7 @@ const restoreRevisionService = async (revisionId, userId) => {
   const note = revision.Note;
 
   //Update note content with the past version snapshot
-  note.content = revision.contentSnapshot;
+  note.contentBody = revision.contentSnapshot;
   await note.save();
 
   //Sync data
@@ -90,7 +90,7 @@ const restoreRevisionService = async (revisionId, userId) => {
   return {
     id: note.id,
     title: note.title,
-    content: note.content,
+    content: note.contentBody,
     categoryId: note.categoryId,
     tags: note.Tags.map((tag) => ({
       id: tag.id,
