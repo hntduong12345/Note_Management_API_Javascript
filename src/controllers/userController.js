@@ -1,14 +1,15 @@
-const {
-  registerService,
-  loginService,
-  getUserDetailByIdService,
-  getUserDetailByEmailService,
-} = require("../services/userService");
+// const {
+//   registerService,
+//   loginService,
+//   getUserDetailByIdService,
+//   getUserDetailByEmailService,
+// } = require("../services/userService");
+const userService = require("../services/userService");
 
 //#region Auth Controllers
 const register = async (req, res, next) => {
   try {
-    const data = await registerService(req.body);
+    const data = await userService.registerService(req.body);
     return res.status(200).json(data);
   } catch (error) {
     next(error);
@@ -17,7 +18,7 @@ const register = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   try {
-    const data = await loginService(req.body);
+    const data = await userService.loginService(req.body);
     return res.status(200).json(data);
   } catch (error) {
     next(error);
@@ -29,7 +30,7 @@ const login = async (req, res, next) => {
 const getUserById = async (req, res, next) => {
   try {
     const userId = req.params.id;
-    const data = await getUserDetailByIdService(userId);
+    const data = await userService.getUserDetailByIdService(userId);
     return res.status(200).json(data);
   } catch (error) {
     next(error);
@@ -39,7 +40,7 @@ const getUserById = async (req, res, next) => {
 const getUserByEmail = async (req, res, next) => {
   try {
     const email = req.params.email;
-    const data = await getUserDetailByEmailService(email);
+    const data = await userService.getUserDetailByEmailService(email);
     return res.status(200).json(data);
   } catch (error) {
     next(error);

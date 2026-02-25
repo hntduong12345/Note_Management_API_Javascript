@@ -1,7 +1,9 @@
 const express = require("express");
 const auth = require("../middlewares/jwt");
 
+//Call Entity Controllers
 const userHandlers = require("./userAPI");
+const categoryHandlers = require("./categoryAPI");
 
 const routerAPI = express.Router();
 
@@ -15,5 +17,6 @@ routerAPI.get("/", (req, res) => {
 
 //Set controller api
 routerAPI.use("/users", userHandlers);
+routerAPI.use("/categories", categoryHandlers);
 
 module.exports = routerAPI;
