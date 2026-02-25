@@ -1,5 +1,4 @@
 require("dotenv").config();
-const bcrypt = require("bcryptjs");
 const AppError = require("../utils/AppError");
 const sequelize = require("../config/database");
 
