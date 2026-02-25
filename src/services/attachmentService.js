@@ -1,6 +1,5 @@
 require("dotenv").config();
 const AppError = require("../utils/AppError");
-const sequelize = require("../config/database");
 // const cloudinary = require("cloudinary").v2;
 
 const Attachment = require("../models/Attachment");
