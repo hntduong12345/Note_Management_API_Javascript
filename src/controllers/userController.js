@@ -1,9 +1,3 @@
-// const {
-//   registerService,
-//   loginService,
-//   getUserDetailByIdService,
-//   getUserDetailByEmailService,
-// } = require("../services/userService");
 const userService = require("../services/userService");
 
 //#region Auth Controllers
