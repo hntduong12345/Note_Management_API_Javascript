@@ -11,7 +11,7 @@ const createLink = async (req, res, next) => {
 
 const removeLink = async (req, res, next) => {
   try {
-    const userId = req.params.userId;
+    const userId = req.query.userId;
     const id = req.params.id;
     await noteLinkService.removeLinkService(id, userId);
     res.status(204).json(null);
@@ -22,8 +22,8 @@ const removeLink = async (req, res, next) => {
 
 const getSourceLinks = async (req, res, next) => {
   try {
-    const userId = req.params.userId;
-    const noteId = req.params.noteId;
+    const userId = req.query.userId;
+    const noteId = req.query.noteId;
     const data = await noteLinkService.getSourceLinksService(noteId, userId);
     res.status(200).json(data);
   } catch (error) {
@@ -33,8 +33,8 @@ const getSourceLinks = async (req, res, next) => {
 
 const getTargetLinks = async (req, res, next) => {
   try {
-    const userId = req.params.userId;
-    const noteId = req.params.noteId;
+    const userId = req.query.userId;
+    const noteId = req.query.noteId;
     const data = await noteLinkService.getTargetLinksService(noteId, userId);
     res.status(200).json(data);
   } catch (error) {
