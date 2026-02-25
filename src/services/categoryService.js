@@ -10,10 +10,12 @@ const getAllCategoriesService = async (userId) => {
   const user = await User.findByPk(userId);
   if (!user) throw new AppError("User is not found!", 404);
 
-  return await Category.findAll({
+  const categories = await Category.findAll({
     where: { userId: userId },
     order: [["name", "ASC"]],
   });
+
+  return categories.map((cate) => mapToResponse(cate));
 };
 
 const createCategoryService = async (request, userId) => {
@@ -28,7 +30,7 @@ const createCategoryService = async (request, userId) => {
 
   //Sync value from DB
   await newCate.reload();
-  return newCate;
+  return mapToResponse(newCate);
 };
 
 const updateCategoryService = async (id, request, userId) => {
@@ -44,7 +46,7 @@ const updateCategoryService = async (id, request, userId) => {
   await category.save();
 
   await category.reload();
-  return category;
+  return mapToResponse(category);
 };
 
 const deleteCategoryService = async (id, userId) => {
@@ -89,6 +91,15 @@ const deleteCategoryService = async (id, userId) => {
     await transaction.rollback();
     throw error;
   }
+};
+
+const mapToResponse = (category) => {
+  return {
+    id: category.id,
+    name: category.name,
+    iconIdentifier: category.iconIdentifier,
+    createdAt: category.createdAt,
+  };
 };
 
 module.exports = {

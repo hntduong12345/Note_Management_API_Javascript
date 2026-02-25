@@ -17,8 +17,8 @@ const deleteAttachment = async (req, res, next) => {
   try {
     const userId = req.params.userId;
     const id = req.params.id;
-    const data = await attachmentService.deleteAttchmentService(id, userId);
-    res.status(200).json(data);
+    await attachmentService.deleteAttchmentService(id, userId);
+    res.status(204).json(null);
   } catch (error) {
     next(error);
   }
